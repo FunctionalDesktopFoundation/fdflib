@@ -30,7 +30,6 @@ Item {
     property int _staggerIdx: -1
     property var _staggerChildren: []
     property var _staggerHeights: []
-    property int _staggerIdx: -1
 
     function _startStagger() {
         _staggerIdx = -1
