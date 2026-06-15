@@ -1,0 +1,31 @@
+module FDF
+singleton Theme 1.0 Theme.qml
+AnimatedIcon 1.0 AnimatedIcon.qml
+Breadcrumbs 1.0 Breadcrumbs.qml
+FButton 1.0 FButton.qml
+Card 1.0 Card.qml
+HeaderBar 1.0 HeaderBar.qml
+Input 1.0 Input.qml
+Label 1.0 Label.qml
+ListItem 1.0 ListItem.qml
+Modal 1.0 Modal.qml
+NavBar 1.0 NavBar.qml
+NavRail 1.0 NavRail.qml
+PageView 1.0 PageView.qml
+ProgressBar 1.0 ProgressBar.qml
+SearchBar 1.0 SearchBar.qml
+Sidebar 1.0 Sidebar.qml
+SidebarSection 1.0 SidebarSection.qml
+Slider 1.0 Slider.qml
+TitleBar 1.0 TitleBar.qml
+Toggle 1.0 Toggle.qml
+Tooltip 1.0 Tooltip.qml
+TrafficLights 1.0 TrafficLights.qml
+Accordion 1.0 Accordion.qml
+FIcon 1.0 FIcon.qml
+Popover 1.0 Popover.qml
+PopoverItem 1.0 PopoverItem.qml
+Toast 1.0 Toast.qml
+PaneSection 1.0 PaneSection.qml
+ContentSections 1.0 ContentSections.qml
+ContentView 1.0 ContentView.qml
