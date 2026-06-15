@@ -12,7 +12,10 @@
           fdflib = pkgs.stdenv.mkDerivation {
             name = "fdflib";
             src = ./.;
-            phases = [ "installPhase" ];
+
+            dontConfigure = true;
+            dontBuild = true;
+
             installPhase = ''
               mkdir -p $out/FDF
               cp -r ./*.qml $out/FDF/
