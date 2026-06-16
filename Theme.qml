@@ -476,7 +476,6 @@ QtObject {
         dispatchState()
         themeChanged()
     }
-    }
 
     function dispatchState() {
         try { State.set("theme", {darkMode: darkMode, accentColor: accentColor}) } catch(e) {}
