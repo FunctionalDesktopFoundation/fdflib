@@ -1,8 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Effects
 import FDF
-import Qt5Compat.GraphicalEffects
 
 Item {
     id: root
@@ -62,9 +62,11 @@ Item {
                 border.color: variant === "default" ? Theme.palette.border : "transparent"
 
                 layer.enabled: true
-                layer.effect: DropShadow {
-                    radius: 12; samples: 16
-                    color: Qt.rgba(0, 0, 0, 0.45)
+                layer.effect: MultiEffect {
+                    shadowEnabled: true
+                    shadowColor: Qt.rgba(0, 0, 0, 0.45)
+                    shadowBlur: 0.25
+                    autoPaddingEnabled: true
                 }
 
                 opacity: 0

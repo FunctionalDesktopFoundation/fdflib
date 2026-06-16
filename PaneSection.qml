@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import FDF
 
 Rectangle {
@@ -23,10 +23,11 @@ Rectangle {
     clip: true
 
     layer.enabled: true
-    layer.effect: DropShadow {
-        radius: 8; samples: 12
-        color: Qt.rgba(0, 0, 0, 0.25)
-        transparentBorder: true
+    layer.effect: MultiEffect {
+        shadowEnabled: true
+        shadowColor: Qt.rgba(0, 0, 0, 0.25)
+        shadowBlur: 0.15
+        autoPaddingEnabled: true
     }
 
     Layout.fillWidth: true

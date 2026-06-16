@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import FDF
 
 Item {
@@ -53,10 +53,11 @@ Item {
                 color: Theme.palette.surfaceHigh
                 clip: true
                 layer.enabled: true
-                layer.effect: DropShadow {
-                    radius: 8; samples: 12
-                    color: Qt.rgba(0, 0, 0, 0.25)
-                    transparentBorder: true
+                layer.effect: MultiEffect {
+                    shadowEnabled: true
+                    shadowColor: Qt.rgba(0, 0, 0, 0.25)
+                    shadowBlur: 0.15
+                    autoPaddingEnabled: true
                 }
                 opacity: rightPaneLoader.active ? 1.0 : 0.0
                 Behavior on opacity { NumberAnimation { duration: Theme.animNorm; easing.type: Easing.OutCubic } }
@@ -79,10 +80,11 @@ Item {
             color: Theme.palette.surfaceHigh
             clip: true
             layer.enabled: true
-            layer.effect: DropShadow {
-                radius: 8; samples: 12
-                color: Qt.rgba(0, 0, 0, 0.25)
-                transparentBorder: true
+            layer.effect: MultiEffect {
+                shadowEnabled: true
+                shadowColor: Qt.rgba(0, 0, 0, 0.25)
+                shadowBlur: 0.15
+                autoPaddingEnabled: true
             }
             opacity: bottomPaneLoader.active ? 1.0 : 0.0
             Behavior on opacity { NumberAnimation { duration: Theme.animNorm; easing.type: Easing.OutCubic } }

@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 Rectangle {
     id: root
@@ -18,9 +18,11 @@ Rectangle {
     color: Theme.palette.surfaceHigh
     radius: Theme.rXl
     layer.enabled: root.lifted > 0
-    layer.effect: DropShadow {
-        radius: root.lifted * 8; samples: root.lifted * 16
-        color: Qt.rgba(0, 0, 0, 0.25)
+    layer.effect: MultiEffect {
+        shadowEnabled: true
+        shadowColor: Qt.rgba(0, 0, 0, 0.25)
+        shadowBlur: Math.min(root.lifted * 0.1, 0.5)
+        autoPaddingEnabled: true
     }
     ColumnLayout {
         id: contentColumn

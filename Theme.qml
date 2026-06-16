@@ -327,7 +327,12 @@ QtObject {
         dropdownHover:   "#2A2A2A",
         dropdownText:    "#E5E5E5",
         dropdownTextDim: "#9CA3AF",
-        dropdownBorder:  "#3A3A3A"
+        dropdownBorder:  "#3A3A3A",
+        chartAlt:        "#4ADE80",
+        chart3:          "#FF9F0A",
+        chart4:          "#7C3AED",
+        chart5:          "#FF453A",
+        chart6:          "#32D74B"
     })
 
     readonly property var lightPalette: ({
@@ -389,7 +394,12 @@ QtObject {
         dropdownHover:   "#F0F0F0",
         dropdownText:    "#1A1A1A",
         dropdownTextDim: "#666666",
-        dropdownBorder:  "#D4D4D4"
+        dropdownBorder:  "#D4D4D4",
+        chartAlt:        "#28A745",
+        chart3:          "#FD7E14",
+        chart4:          "#6F42C1",
+        chart5:          "#DC3545",
+        chart6:          "#17A2B8"
     })
 
     property var palette: buildPalette()
@@ -451,24 +461,21 @@ QtObject {
     }
 
     function persistTheme() {
-        var configDir = bridge.homeDir() + "/.config/fdf"
-        bridge.writeFile(configDir + "/settings.json", JSON.stringify({darkMode: darkMode, accentColor: accentColor}, null, 2))
+        if (typeof SharedSettings === "undefined") return
+        SharedSettings.darkMode = darkMode
+        SharedSettings.accentColor = accentColor
+        SharedSettings.themeName = themeName
     }
 
     function loadPersistedTheme() {
-        try {
-            var raw = bridge.readFile(bridge.homeDir() + "/.config/fdf/settings.json")
-            if (raw) {
-                var cfg = JSON.parse(raw)
-                if (cfg.darkMode !== undefined && cfg.darkMode !== darkMode)
-                    darkMode = cfg.darkMode
-                if (cfg.accentColor !== undefined && cfg.accentColor !== accentColor)
-                    accentColor = cfg.accentColor
-                palette = buildPalette()
-                dispatchState()
-                themeChanged()
-            }
-        } catch(e) {}
+        if (typeof SharedSettings === "undefined") return
+        darkMode = SharedSettings.darkMode
+        accentColor = SharedSettings.accentColor
+        themeName = SharedSettings.themeName
+        palette = buildPalette()
+        dispatchState()
+        themeChanged()
+    }
     }
 
     function dispatchState() {

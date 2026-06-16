@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 Item {
     id: root
@@ -236,9 +236,11 @@ Item {
         Behavior on implicitHeight { NumberAnimation { duration: root.staggerDelay * 2; easing.type: Easing.OutCubic } }
 
         layer.enabled: root.lifted > 0
-        layer.effect: DropShadow {
-            radius: root.lifted * 6 + 4; samples: root.lifted * 10 + 6
-            color: Qt.rgba(0, 0, 0, 0.5)
+        layer.effect: MultiEffect {
+            shadowEnabled: true
+            shadowColor: Qt.rgba(0, 0, 0, 0.5)
+            shadowBlur: Math.min(root.lifted * 0.1 + 0.06, 0.5)
+            autoPaddingEnabled: true
         }
 
         ColumnLayout {

@@ -29,3 +29,11 @@ Toast 1.0 Toast.qml
 PaneSection 1.0 PaneSection.qml
 ContentSections 1.0 ContentSections.qml
 ContentView 1.0 ContentView.qml
+BarChart 1.0 BarChart.qml
+LineChart 1.0 LineChart.qml
+PieChart 1.0 PieChart.qml
+Gauge 1.0 Gauge.qml
+Sparkline 1.0 Sparkline.qml
+SidebarItem 1.0 SidebarItem.qml
+AnimatedLabel 1.0 AnimatedLabel.qml
+NumberCounter 1.0 NumberCounter.qml

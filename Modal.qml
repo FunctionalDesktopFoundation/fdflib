@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import FDF as FDF
 
 Item {
@@ -101,9 +101,11 @@ Item {
             radius: FDF.Theme.rWindow
 
             layer.enabled: root.lifted > 0
-            layer.effect: DropShadow {
-                radius: root.lifted * 12; samples: root.lifted * 16
-                color: Qt.rgba(0, 0, 0, 0.55)
+            layer.effect: MultiEffect {
+                shadowEnabled: true
+                shadowColor: Qt.rgba(0, 0, 0, 0.55)
+                shadowBlur: Math.min(root.lifted * 0.15, 0.6)
+                autoPaddingEnabled: true
             }
         }
 
